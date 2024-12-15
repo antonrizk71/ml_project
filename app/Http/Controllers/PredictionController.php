@@ -13,6 +13,7 @@ class PredictionController extends Controller
 
     public function predict(Request $request)
     {
+        // Validate the inputs
         $request->validate([
             'temperature' => 'required|numeric',
             'humidity' => 'required|numeric',
@@ -25,6 +26,7 @@ class PredictionController extends Controller
             'population_density' => 'required|numeric',
         ]);
 
+        // Gather the input features
         $features = [
             $request->input('temperature'),
             $request->input('humidity'),
@@ -36,18 +38,25 @@ class PredictionController extends Controller
             $request->input('proximity'),
             $request->input('population_density'),
         ];
-        $command = escapeshellcmd("C:/Users/user/AppData/Local/Programs/Python/Python312/python.exe " . storage_path('app/scripts/script.py') . " " . implode(' ', $features));
 
-        $output = null;
-        $return_var = null;
+        // Construct the command with features
+        // $command = "C:/Users/Lenovo/anaconda3/python.exe ML_model/script.py " . implode(' ', $features);
+        // $command = "ML_model/script.py " . implode(' ', $features);
+        $command = "C:/Users/Lenovo/anaconda3/python.exe " . base_path('ML_model/script.py') . " " . implode(' ', $features);
 
-        exec($command, $output, $return_var);
+        // Execute the Python script
+        $output = [];
+        $returnVar = 0;
+    
+        exec($command, $output, $returnVar);
+       
+        
+        // Handle any errors
+        // if ($returnVar !== 0) {
+        //     return back()->withErrors(['error' => 'An error occurred while predicting.']);
+        // }
 
-//        if ($return_var !== 0) {
-//            return back()->withErrors(['error' => 'An error occurred while predicting.']);
-//        }
-
+        // Return the prediction result
         return back()->with('prediction', $output[0]);
     }
 }
-

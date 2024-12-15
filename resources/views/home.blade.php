@@ -34,55 +34,55 @@
         <!-- Temperature -->
         <div class="mb-3">
             <label for="temperature" class="form-label">Temperature (°C):</label>
-            <input type="number" step="0.1" class="form-control" id="temperature" name="temperature" required>
+            <input type="number" step="0.001" class="form-control" id="temperature" name="temperature" value="{{ old('temperature') }}" required>
         </div>
 
         <!-- Humidity -->
         <div class="mb-3">
             <label for="humidity" class="form-label">Humidity (%):</label>
-            <input type="number" step="0.1" class="form-control" id="humidity" name="humidity" required>
+            <input type="number" step="0.001" class="form-control" id="humidity" name="humidity" value="{{ old('humidity') }}" required>
         </div>
 
         <!-- PM2.5 -->
         <div class="mb-3">
             <label for="pm25" class="form-label">PM2.5 (µg/m³):</label>
-            <input type="number" step="0.1" class="form-control" id="pm25" name="pm25" required>
+            <input type="number" step="0.001" class="form-control" id="pm25" name="pm25" value="{{ old('pm25') }}" required>
         </div>
 
         <!-- PM10 -->
         <div class="mb-3">
             <label for="pm10" class="form-label">PM10 (µg/m³):</label>
-            <input type="number" step="0.1" class="form-control" id="pm10" name="pm10" required>
+            <input type="number" step="0.001" class="form-control" id="pm10" name="pm10" value="{{ old('pm10') }}" required>
         </div>
 
         <!-- NO2 -->
         <div class="mb-3">
             <label for="no2" class="form-label">NO2 (µg/m³):</label>
-            <input type="number" step="0.1" class="form-control" id="no2" name="no2" required>
+            <input type="number" step="0.001" class="form-control" id="no2" name="no2" value="{{ old('no2') }}" required>
         </div>
 
         <!-- SO2 -->
         <div class="mb-3">
             <label for="so2" class="form-label">SO2 (µg/m³):</label>
-            <input type="number" step="0.1" class="form-control" id="so2" name="so2" required>
+            <input type="number" step="0.001" class="form-control" id="so2" name="so2" value="{{ old('so2') }}" required>
         </div>
 
         <!-- CO -->
         <div class="mb-3">
             <label for="co" class="form-label">CO (ppm):</label>
-            <input type="number" step="0.1" class="form-control" id="co" name="co" required>
+            <input type="number" step="0.001" class="form-control" id="co" name="co" value="{{ old('co') }}" required>
         </div>
 
         <!-- Proximity to Industrial Areas -->
         <div class="mb-3">
             <label for="proximity" class="form-label">Proximity to Industrial Areas (km):</label>
-            <input type="number" step="0.1" class="form-control" id="proximity" name="proximity" required>
+            <input type="number" step="0.001" class="form-control" id="proximity" name="proximity" value="{{ old('proximity') }}" required>
         </div>
 
         <!-- Population Density -->
         <div class="mb-3">
             <label for="population_density" class="form-label">Population Density (people/km²):</label>
-            <input type="number" step="1" class="form-control" id="population_density" name="population_density" required>
+            <input type="number" step="0.001" class="form-control" id="population_density" name="population_density" value="{{ old('population_density') }}" required>
         </div>
 
         <!-- Submit Button -->
