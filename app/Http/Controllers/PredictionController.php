@@ -49,8 +49,7 @@ class PredictionController extends Controller
         $returnVar = 0;
     
         exec($command, $output, $returnVar);
-       
-        
+               
         // Handle any errors
         // if ($returnVar !== 0) {
         //     return back()->withErrors(['error' => 'An error occurred while predicting.']);
