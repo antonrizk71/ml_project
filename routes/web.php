@@ -8,12 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PredictionController;
 
-Route::post('/reset-r', function(){
-    dd();
-    
-}
 
-);
+Route::post('/reset', [PredictionController::class, 'reset'])->name('reset');
 
 Route::get('/', [PredictionController::class, 'index']);
 Route::post('/predict', [PredictionController::class, 'predict']);

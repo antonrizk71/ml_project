@@ -152,7 +152,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <button type="submit" formaction="/reset-r" class="btn btn-danger">Reset</button>
+            <button type="submit" formaction="{{ route('reset') }}"  class="btn btn-danger">Reset</button>
             <button type="submit" class="btn btn-primary">Predict</button>
         </div>
     </form>

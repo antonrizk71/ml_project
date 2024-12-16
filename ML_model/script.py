@@ -23,6 +23,7 @@ try:
 
    
     prediction = model.predict(scaled_features) 
+    
     category = {
     0: 'Good',
     1: 'Hazardous',

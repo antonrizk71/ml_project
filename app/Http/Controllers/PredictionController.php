@@ -13,10 +13,9 @@ class PredictionController extends Controller
     public function reset(Request $req){
         
         $req->session()->forget(['prediction', 'inputs']);
-
-        dd(5);
+    
        
-        return view('home');
+        return back();
     
     }
 
